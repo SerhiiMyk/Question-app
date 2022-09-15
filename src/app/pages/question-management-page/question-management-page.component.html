@@ -1,1 +1,19 @@
-<p>question-management-page works!</p>
+<div class="management column-center">
+  <div class="management__nav-btn row-center">
+    <button routerLink='/create-question'>create question</button>
+    <button routerLink='/list-question'>question list</button>
+  </div>
+  <div class="management__question-list">
+    <div class="management__question row-space-between" *ngFor="let question of questionnaireData ">
+      <div class="management__info-div">
+        <p>text: {{question.questionText}}</p>
+        <p>type: {{question.type}}</p>
+        <p>time: {{question.creationDate|date: 'medium' }}</p>
+      </div>
+      <div class="management__button-div row-center">
+        <button [routerLink]="['../edit-question',question.id]">edit</button>
+        <button (click)="onDelete(question.id)">delete</button>
+      </div>
+    </div>
+  </div>
+</div>

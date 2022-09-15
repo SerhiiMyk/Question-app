@@ -1,0 +1,25 @@
+@import "src/assets/styles/mixins";
+
+.column-center {
+  @include flex(column, center, center);
+}
+
+.column-start {
+  @include flex(column, center, flex-start);
+}
+
+.row-center {
+  @include flex(row, center, center);
+}
+
+.row-start {
+  @include flex(row, flex-start, center);
+}
+
+.row-space-between {
+  @include flex(row, space-between, center);
+}
+
+.row-align-top {
+  @include flex(row, center, top);
+}
