@@ -1,1 +1,29 @@
-<p>create-edit-question-page works!</p>
+<div class="create-edit column-center">
+  <div class="create-edit__form" [formGroup]="form">
+    <button class="create-edit__close" routerLink='/management-question'><span>&#10060;</span></button>
+    <div class="create-edit__text-div">
+      <p>question text:</p>
+      <input placeholder="write your question..." type="text" formControlName="questionText">
+    </div>
+    <div class="column-start create-edit__radio-div">
+      <label *ngFor="let type of types">
+        <input name="type" type="radio" [value]="type" formControlName="type" (change)="onRadioBtnChange(type)">
+        {{type}}
+      </label>
+    </div>
+    <ul class="create-edit__answers" *ngIf="showAnswersField" formArrayName="answers">
+      <button class="create-edit__add-btn" (click)="addAnswerControl()">add answer</button>
+      <li class="row-center" *ngFor="let answerControl of answersFormArray; let i=index">
+        <p>{{alphabetArray[i]}}</p>
+        <input [formControlName]="i" type="text">
+        <button (click)="removeAnswerControl(i)">delete</button>
+      </li>
+    </ul>
+    <div class="column-center">
+      <button class="create-edit__save-btn" (click)="onSubmit()"
+              [disabled]=" form.value.type ==='open' && form.controls['questionText'].invalid
+              || form.value.type !=='open' && form.invalid "
+      >save</button>
+    </div>
+  </div>
+</div>

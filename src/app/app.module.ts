@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { QuestionManagementPageComponent } from './pages/question-management-page/question-management-page.component';
 import { QuestionsListPageComponent } from './pages/questions-list-page/questions-list-page.component';
 import { CreateEditQuestionPageComponent } from './pages/create-edit-question-page/create-edit-question-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CreateEditQuestionPageComponent } from './pages/create-edit-question-pa
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

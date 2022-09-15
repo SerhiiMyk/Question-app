@@ -1,0 +1,63 @@
+.create-edit {
+  padding: 50px;
+
+  &__close {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    background: none;
+    border: none;
+
+    span {
+      font-family: Segoe UI Symbol, serif;
+    }
+  }
+
+  &__form {
+    min-width: 300px;
+    position: relative;
+
+  }
+
+  &__text-div {
+    p {
+      margin: 0 0 5px 0;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &__radio-div {
+    margin-top: 10px;
+    gap: 5px;
+  }
+
+  &__add-btn {
+    margin: 10px 0;
+  }
+
+  &__answers {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      height: 30px;
+
+      input {
+        margin-left: 10px;
+      }
+
+      button {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  &__save-btn {
+    margin: 20px 0;
+    width: 100%;
+  }
+}
