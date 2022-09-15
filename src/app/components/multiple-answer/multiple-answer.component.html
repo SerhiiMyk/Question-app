@@ -1,0 +1,14 @@
+<div class="multiple__answers-container">
+  <h2>{{question.questionText}}</h2>
+  <h4>question type: {{question.type}}</h4>
+  <ul class="multiple__answers">
+    <li class="row-start" *ngFor="let answer of question.answers; let i=index">
+      <p>{{alphabetArray[i]}}</p>
+      <input type="checkbox" (change)="onChangeCheckbox(answer, $event)" [value]="answer" [disabled]="disable" #input>
+      <h4>{{answer}}</h4>
+    </li>
+  </ul>
+  <button class="button button__primary" (click)="onSubmit()"
+          [disabled]="answers.status === 'INVALID' && !disable">{{buttonName}}
+  </button>
+</div>

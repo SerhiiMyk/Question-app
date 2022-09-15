@@ -1,0 +1,14 @@
+<div class="single__answers-container" [formGroup]="form">
+  <h2>{{question.questionText}}</h2>
+  <h4>question type: {{question.type}}</h4>
+  <div class="column-start single__answers">
+    <label class="row-start" *ngFor="let answer of question.answers; let i=index">
+      <p>{{alphabetArray[i]}}</p>
+      <input name="answer" type="radio" [value]="answer" formControlName="answer" [attr.disabled]="disable ? '' : null">
+      <h4>{{answer}}</h4>
+    </label>
+  </div>
+  <button class="button button__primary" (click)="onSubmit()"
+          [disabled]="form.status === 'INVALID' && !disable">{{buttonName}}
+  </button>
+</div>

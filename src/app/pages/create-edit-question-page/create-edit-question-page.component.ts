@@ -3,7 +3,7 @@ import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '
 import { QuestionnaireService } from '../../services/questionnaire.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IQuestionPart } from '../../interfaces/question.interface';
-import { alphabetEnum, types } from '../../enums/quesionnaire.enums';
+import { alphabetEnum, types } from '../../enums/questionnaire.enums';
 
 @Component({
   selector: 'app-create-edit-question-page',
