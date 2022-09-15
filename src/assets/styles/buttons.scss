@@ -1,0 +1,36 @@
+.button{
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--box-shadow);
+  font-weight: 600;
+  font-size: 14px;
+  transition: 200ms;
+  padding: 6px 40px;
+  @include flex(row, center, center);
+  outline: none;
+
+  &__primary {
+    background-color: var(--primary);
+    color: var(--font-snow);
+  }
+  &__orange {
+    background-color: var(--orange);
+    color: var(--font-snow);
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(110%);
+    transition: 200ms;
+  }
+
+  &:disabled {
+    background-color: var(--gray);
+    color: var(--font-disable);
+    cursor: auto;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}

@@ -1,1 +1,34 @@
-<p>questions-list-page works!</p>
+<div class="row-center">
+  <button class="button button__orange" routerLink='/management-question'>manage question page</button>
+</div>
+<div class="list row-align-top">
+
+  <div class="list__unanswered">
+    <h2 class="list__title">Unanswered question</h2>
+    <div *ngFor="let unansweredQuestion of questionnaireUnanswered">
+      <div [ngSwitch]="unansweredQuestion.type">
+        <app-single-answer *ngSwitchCase="'single choice'" [question]="unansweredQuestion"
+                           (emitAnswer)="onEmitAnswer($event)"></app-single-answer>
+        <app-multiple-answer *ngSwitchCase="'multiple choice'" [question]="unansweredQuestion"
+                             (emitAnswer)="onEmitAnswer($event)"></app-multiple-answer>
+        <app-open-answer *ngSwitchCase="'open'" [question]="unansweredQuestion"
+                         (emitAnswer)="onEmitAnswer($event)"></app-open-answer>
+      </div>
+    </div>
+  </div>
+
+  <div class="list__answered">
+    <h2 class="list__title">Answered question</h2>
+    <div *ngFor="let answeredQuestion of questionnaireAnswered">
+      <div [ngSwitch]="answeredQuestion.type">
+        <app-single-answer *ngSwitchCase="'single choice'" [question]="answeredQuestion" [disable]="true"
+                           (emitAnswer)="onEmitAnswer($event)"></app-single-answer>
+        <app-multiple-answer *ngSwitchCase="'multiple choice'" [question]="answeredQuestion" [disable]="true"
+                             (emitAnswer)="onEmitAnswer($event)"></app-multiple-answer>
+        <app-open-answer *ngSwitchCase="'open'" [question]="answeredQuestion" [disable]="true"
+                         (emitAnswer)="onEmitAnswer($event)"></app-open-answer>
+      </div>
+    </div>
+  </div>
+
+</div>

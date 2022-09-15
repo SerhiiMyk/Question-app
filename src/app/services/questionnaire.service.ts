@@ -52,4 +52,10 @@ export class QuestionnaireService {
   generateId(): string {
     return new Date().getTime().toString();
   }
+
+  updateQuestionnaireData(question: IQuestion) {
+    this.questionnaireData = this.questionnaireData.filter((item) => item.id !== question.id);
+    this.questionnaireData.unshift(question);
+    this.questionnaireData = [...this.questionnaireData];
+  }
 }
